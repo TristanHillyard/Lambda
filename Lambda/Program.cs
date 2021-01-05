@@ -70,16 +70,18 @@ namespace Lambda
             employee10.ID = 10;
             employees.Add(employee10);
 
-            foreach(Employee employee in employees)
+            List<Employee> newemployees = new List<Employee>();
+            foreach (Employee employee in employees)
             {
                 if(employee.firstname == "Joe")
                 {
-                    List<Employee> newemployees = new List<Employee>();
+                    newemployees.Add(employee);
                 }
             }
-            foreach (Employee joeEmployee in employees.Where(x => x.firstname == "Joe").ToList()) ;
 
-            foreach (Employee employId in employees.Where(x => x.ID < 5).ToList()) ; 
+            List<Employee> joeEmployee = employees.Where(x => x.firstname == "Joe").ToList();
+
+            List<Employee> employId = employees.Where(x => x.ID < 5).ToList() ; 
             
 
         }
