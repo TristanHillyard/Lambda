@@ -78,8 +78,15 @@ namespace Lambda
                     Console.WriteLine(newemployees);
                 }
             }
-            List<Employee> joeEmployees = joeEmployees.Where(x => x.firstname == "Joe").ToList();
-            List<Employee> employID = employID.Where(x=> x.ID < 5).ToList();
+            foreach (Employee joeEmployee in employees.Where(x => x.firstname == "Joe").ToList())
+            {
+                Console.WriteLine(joeEmployee);
+            }
+            foreach (Employee employId in employees.Where(x => x.ID < 5).ToList()) 
+            {
+                Console.WriteLine(employId);
+            }
+
         }
     }
 }
